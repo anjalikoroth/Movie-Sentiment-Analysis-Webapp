@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}" />
+    <!-- <div class="topnav">
+      <a class="active" href="home.html">Home</a>
+      <a href="data.html">Reviews</a>
+    </div> -->
+    <nav>
+      <div class="nav-bg"></div>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="data.html">All Reviews</a></li>
+        </ul>
+    </nav>
+  </head>
+  <body>
+    <div class="center">
+      You're 
+      <p class="{{'redText' if value == 'Negative' else 'greenText'}}">
+      {{value}}
+      </p>
+      about the movie
+    </div>
+  </body>
+</html>
+
+<style>
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 80;
+    color: blue;
+    font-family: sans-serif;
+  }
+
+  .redText{
+      color:red;
+  }
+  .greenText {
+      color:green;
+  }
+  
+  nav {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    font-size: x-large;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: .2em 2em;
+    float: right;
+  }
+
+  nav ul li {
+    display: inline-block;
+    margin: 0;
+    padding: .2em .7em;
+  }
+
+  nav a {
+    width: 100%;
+    height: 100%;
+    color: blue;
+    text-decoration: none;
+    font-family: Ubuntu;
+    font-size: 1.15em;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    transition: .25s ease-in-out;
+  }
+
+  nav a:hover {
+    color: rgb(220, 18, 0);
+  }
+
+  .nav-bg {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgb(50, 50, 50);
+    transition: .45s ease-in-out;
+  }
+</style>

@@ -1,0 +1,169 @@
+<html>
+  <head>
+	<title>Movie Review</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}" /> -->
+    <!-- <div class="topright0">
+      <a class="active" href="home.html">Home</a>
+      <br>
+      <a href="data.html">Reviews</a>
+    </div> -->
+    <nav>
+      <div class="nav-bg"></div>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="data.html">All Reviews</a></li>
+        </ul>
+    </nav>
+  </head>
+  <body>
+  <h1 class="center">Are you 
+    <div class="greenText">POSITIVE</div> 
+    or 
+    <div class="redText">NEGATIVE</div> 
+    about the movie?
+  </h1>
+	<!--<div class="first">-->
+    <!--<p>Submit the review to classify it as positive or negative</p>-->
+    <!--</div>-->
+    <div class="s01">
+      <form action = "http://localhost:5000/results.html" method="POST">
+        <!-- <fieldset>
+        </fieldset> -->
+        <div class="center1">
+          <div class="first-input-field first-wrap">
+            <!-- <input id="movie-review" type="text" size="80" placeholder="What is your review of the movie.." name='result' />
+             -->
+            <textarea name="result" id="movie-review" cols="30" rows="10" placeholder="Review please.."></textarea>
+          </div>
+          <div class="second-input-field second-wrap">
+              <button class="button" type="submit", value="submit">Let's find out...!</button>
+          </div>
+        </div>
+		<!--<div class="third-input-field third-wrap">-->
+              <!--&lt;!&ndash;<p>Type your review and click the 'Submit' button for sentiment analysis</p>&ndash;&gt;-->
+        <!--</div>-->
+      </form>
+    </div>
+  </body>
+</html>
+
+
+<style>
+  .redText{
+      color:red;
+  }
+  .greenText {
+      color:green;
+  }
+    
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 80;
+    color: blue;
+    font-family: sans-serif;
+  }
+
+  .center1 {
+    margin: 0;
+    position: absolute;
+    top: 35%;
+    bottom: 30%;
+    left: 70%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 400;
+    color: rgb(40, 157, 236);
+    font-family: sans-serif;
+  }
+
+  textarea{
+    resize: none;
+    height: 100%;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid blue;
+    border-radius: 14px;
+    font-size: 60;
+    font-family: sans-serif;
+  }
+
+  .button {
+  background-color: #4CAF50;
+  width: 100%;
+  border: none;
+  color: white;
+  border-radius: 14px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+  }
+
+  nav {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    font-size: x-large;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: .2em 2em;
+    float: right;
+  }
+
+  nav ul li {
+    display: inline-block;
+    margin: 0;
+    padding: .2em .7em;
+  }
+
+  nav a {
+    width: 100%;
+    height: 100%;
+    color: blue;
+    text-decoration: none;
+    font-family: Ubuntu;
+    font-size: 1.15em;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    transition: .25s ease-in-out;
+  }
+
+  nav a:hover {
+    color: rgb(220, 18, 0);
+  }
+
+  .nav-bg {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgb(50, 50, 50);
+    transition: .45s ease-in-out;
+  }
+</style>
+

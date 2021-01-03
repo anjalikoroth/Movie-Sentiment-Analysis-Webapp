@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} All the Reviews in the Database {% endblock %}</h1>
+    <hr>
+    {% for post in posts %}
+            <h2>{{ post['Review'] }}</h2>
+            <span class="badge badge-primary">{{ post['Prediction'] }}</span>
+        <hr>
+    {% endfor %}
+{% endblock %}
+
+<style>
+    
+</style>
